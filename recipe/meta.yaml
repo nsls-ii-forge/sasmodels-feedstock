@@ -1,0 +1,42 @@
+{% set name = "sasmodels" %}
+{% set version = "1.0.2" %}
+{% set sha256 = "d495a777bf62997cc6ce83177554e206b3454975f0b9aac2ce85bb9429acb25f" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  noarch: python
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - bumps
+    - numpy
+    # May not need this heavy dependency in nsls2forge
+    # - pyopencl
+    - scipy
+
+test:
+  imports:
+    - sasmodels
+    - sasmodels.custom
+    - sasmodels.models
+
+about:
+  home: http://www.sasview.org
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: Package for calculation of small angle scattering models using OpenCL
+  dev_url: https://github.com/SasView/sasmodels

@@ -1,6 +1,6 @@
 {% set name = "sasmodels" %}
-{% set version = "1.0.2" %}
-{% set sha256 = "d495a777bf62997cc6ce83177554e206b3454975f0b9aac2ce85bb9429acb25f" %}
+{% set version = "1.0.4" %}
+{% set sha256 = "1e66c431a8992302975006fef047d3935510ffc9c6b448a98d491a0c414e74f7" %}
 
 package:
   name: {{ name|lower }}

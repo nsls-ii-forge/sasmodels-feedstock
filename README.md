@@ -5,7 +5,7 @@ Home: http://www.sasview.org
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Package for calculation of small angle scattering models using OpenCL
 
